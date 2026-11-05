@@ -1,0 +1,20 @@
+{
+  "name": "crumbs-solid-template",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "tsc --noEmit && bun ../../scripts/verify-crumbs.ts . --full-coverage --no-comments"
+  },
+  "dependencies": {
+    "solid-js": "^1.9.5"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5",
+    "vite-plugin-solid": "^2.11.6",
+    "typescript": "^5.8.3",
+    "@types/bun": "^1.2.0"
+  }
+}

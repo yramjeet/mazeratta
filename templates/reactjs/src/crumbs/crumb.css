@@ -1,0 +1,252 @@
+:root {
+  --crumb-outline: rgba(77, 98, 128, 0.5);
+  --crumb-pencil-bg: #eef2f6;
+  --crumb-pencil-bg-hover: #dee4ed;
+  --crumb-pencil-border: rgba(77, 98, 128, 0.45);
+  --crumb-accent: #495d79;
+  --crumb-accent-strong: #30415a;
+  --crumb-focus: #5979a6;
+  --crumb-pop-bg: #ffffff;
+  --crumb-pop-border: rgba(77, 98, 128, 0.3);
+  --crumb-shadow: rgba(18, 24, 33, 0.16);
+  --crumb-ink: #1d2530;
+  --crumb-ink-2: #4e5a6a;
+  --crumb-ink-3: #6c7889;
+  --crumb-ink-off: #c4cbd4;
+  --crumb-rule: rgba(77, 98, 128, 0.18);
+  --crumb-field-bg: #f7f8fb;
+  --crumb-field-border: rgba(77, 98, 128, 0.28);
+  --crumb-gran-border: rgba(77, 98, 128, 0.3);
+  --crumb-gran-hover: rgba(77, 98, 128, 0.12);
+  --crumb-close-hover: rgba(77, 98, 128, 0.12);
+  --crumb-error: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not(.light) {
+    --crumb-outline: rgba(143, 162, 188, 0.6);
+    --crumb-pencil-bg: #1d2530;
+    --crumb-pencil-bg-hover: #283343;
+    --crumb-pencil-border: rgba(143, 162, 188, 0.55);
+    --crumb-accent: #bdc9db;
+    --crumb-accent-strong: #dee4ed;
+    --crumb-focus: #8199bb;
+    --crumb-pop-bg: #151b23;
+    --crumb-pop-border: rgba(143, 162, 188, 0.35);
+    --crumb-shadow: rgba(0, 0, 0, 0.5);
+    --crumb-ink: #e0e5eb;
+    --crumb-ink-2: #98a4b3;
+    --crumb-ink-3: #6c7889;
+    --crumb-ink-off: #45505e;
+    --crumb-rule: rgba(143, 162, 188, 0.15);
+    --crumb-field-bg: rgba(0, 0, 0, 0.25);
+    --crumb-field-border: rgba(143, 162, 188, 0.2);
+    --crumb-gran-border: rgba(143, 162, 188, 0.3);
+    --crumb-gran-hover: rgba(143, 162, 188, 0.18);
+    --crumb-close-hover: rgba(143, 162, 188, 0.15);
+    --crumb-error: #f87171;
+  }
+}
+
+:root[data-theme="dark"],
+:root.dark {
+  --crumb-outline: rgba(143, 162, 188, 0.6);
+  --crumb-pencil-bg: #1d2530;
+  --crumb-pencil-bg-hover: #283343;
+  --crumb-pencil-border: rgba(143, 162, 188, 0.55);
+  --crumb-accent: #bdc9db;
+  --crumb-accent-strong: #dee4ed;
+  --crumb-focus: #8199bb;
+  --crumb-pop-bg: #151b23;
+  --crumb-pop-border: rgba(143, 162, 188, 0.35);
+  --crumb-shadow: rgba(0, 0, 0, 0.5);
+  --crumb-ink: #e0e5eb;
+  --crumb-ink-2: #98a4b3;
+  --crumb-ink-3: #6c7889;
+  --crumb-ink-off: #45505e;
+  --crumb-rule: rgba(143, 162, 188, 0.15);
+  --crumb-field-bg: rgba(0, 0, 0, 0.25);
+  --crumb-field-border: rgba(143, 162, 188, 0.2);
+  --crumb-gran-border: rgba(143, 162, 188, 0.3);
+  --crumb-gran-hover: rgba(143, 162, 188, 0.18);
+  --crumb-close-hover: rgba(143, 162, 188, 0.15);
+  --crumb-error: #f87171;
+}
+
+:root .crumb-target {
+  display: contents;
+}
+:root .crumb-active {
+  outline: 1px dashed var(--crumb-outline);
+  outline-offset: 2px;
+}
+
+:root :is(.crumb-pencil, .crumb-gran-btn, .crumb-pop-close) {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+:root .crumb-pop-input {
+  box-sizing: border-box;
+  min-height: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+:root .crumb-pencil {
+  position: fixed;
+  z-index: 200;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--crumb-pencil-border);
+  background: var(--crumb-pencil-bg);
+  color: var(--crumb-accent);
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px var(--crumb-shadow);
+}
+:root .crumb-pencil:hover {
+  background: var(--crumb-pencil-bg-hover);
+  color: var(--crumb-accent-strong);
+}
+
+:root .crumb-pop-gran {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid var(--crumb-rule);
+}
+:root .crumb-pop-gran-label {
+  font-size: 11px;
+  color: var(--crumb-ink-2);
+}
+:root .crumb-pop-gran-hint {
+  flex: 1;
+  text-align: right;
+  font-size: 10.5px;
+  color: var(--crumb-ink-3);
+}
+
+:root .crumb-gran {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  padding: 1px 2px;
+  border-radius: 7px;
+  border: 1px solid var(--crumb-gran-border);
+  background: var(--crumb-field-bg);
+}
+:root .crumb-gran-btn {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--crumb-accent);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+:root .crumb-gran-btn:hover:not(:disabled) {
+  background: var(--crumb-gran-hover);
+  color: var(--crumb-accent-strong);
+}
+:root .crumb-gran-btn:disabled {
+  color: var(--crumb-ink-off);
+  cursor: default;
+}
+:root .crumb-gran-err {
+  color: var(--crumb-error);
+}
+
+:root .crumb-popover {
+  position: fixed;
+  z-index: 200;
+  min-width: 260px;
+  max-width: 360px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--crumb-pop-border);
+  background: var(--crumb-pop-bg);
+  box-shadow: 0 10px 30px var(--crumb-shadow);
+}
+
+:root .crumb-pop-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+:root .crumb-pop-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--crumb-accent-strong);
+}
+:root .crumb-pop-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+:root .crumb-pop-src {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10.5px;
+  color: var(--crumb-ink-3);
+}
+:root .crumb-pop-close {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--crumb-ink-2);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+:root .crumb-pop-close:hover {
+  background: var(--crumb-close-hover);
+  color: var(--crumb-ink);
+}
+:root .crumb-pop-input {
+  width: 100%;
+  padding: 7px 9px;
+  border-radius: 7px;
+  border: 1px solid var(--crumb-field-border);
+  background: var(--crumb-field-bg);
+  color: var(--crumb-ink);
+  font-size: 13px;
+  outline: none;
+}
+:root .crumb-pop-input:focus {
+  border-color: var(--crumb-focus);
+}
+:root .crumb-pop-err {
+  border-color: var(--crumb-error);
+}
+:root .crumb-pop-foot {
+  margin-top: 6px;
+  font-size: 10.5px;
+  color: var(--crumb-ink-3);
+}

@@ -1,0 +1,100 @@
+:root {
+  --bg: #0d1116;
+  --panel: #151a21;
+  --line: rgba(143, 162, 188, 0.16);
+  --text: #e5e7eb;
+  --dim: #98a4b3;
+  --accent: #bdc9db;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font:
+    14px/1.6 ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 20px;
+}
+
+.panel {
+  padding: 24px 26px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin: 8px 0 24px;
+  text-align: center;
+}
+
+.logo {
+  width: 160px;
+  height: 160px;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 22px;
+  color: var(--dim);
+}
+.steps li {
+  margin-bottom: 8px;
+}
+.steps strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.key {
+  display: inline-block;
+  padding: 0 5px;
+  border-radius: 4px;
+  border: 1px solid rgba(143, 162, 188, 0.4);
+  background: rgba(143, 162, 188, 0.12);
+  color: var(--accent);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+}
+
+.hint {
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--dim);
+  font-size: 13px;
+}
+.hint + .hint {
+  margin-top: 10px;
+  padding-top: 0;
+  border-top: none;
+}
+.hint em {
+  color: var(--accent);
+  font-style: normal;
+}

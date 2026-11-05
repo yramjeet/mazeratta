@@ -1,0 +1,8 @@
+{
+  "name": "mazeratta",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "mazeratta": "scripts/mazeratta.ts"
+  }
+}
